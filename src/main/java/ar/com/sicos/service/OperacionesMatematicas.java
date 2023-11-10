@@ -1,6 +1,7 @@
 package ar.com.sicos.service;
 
 import ar.com.sicos.model.OperationInput;
+import ar.com.sicos.security.AuthBasic;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -23,6 +24,7 @@ public interface OperacionesMatematicas {
 	Response producto(@PathParam("s1") int a,
 				   @PathParam("s2") int b);
 
+	@AuthBasic
 	@GET
 	@Path("division/{s1}/{s2}")
 	Response division(@PathParam("s1") int a,
